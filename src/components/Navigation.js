@@ -10,21 +10,24 @@ const styles = {
     color: '#2A363B',
   },
   activeLink: {
-    color: '#E84A5F',
+    color: '#E84A5',
   },
 };
 
 const Navigation = () => (
   <nav>
-    <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
+    <NavLink
+      to="/"
+      style={styles.link}
+      activestyle={styles.activeLink}
+    >
       Home
     </NavLink>
 
     <NavLink
       to="/phonebook"
-      exact
       style={styles.link}
-      activeStyle={styles.activeLink}
+      activestyle={styles.activeLink}
     >
       Phonebook
     </NavLink>
