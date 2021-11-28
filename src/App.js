@@ -1,31 +1,48 @@
 import React from 'react';
-import './App.css';
-import {
-  // connect,
-  useSelector,
-  useDispatch,
-} from 'react-redux';
-import ContactList from './components/ContactList/ContactList';
-import ContactsForm from './components/ContactsForm/ContactsForm';
-import Filter from './components/Filter/Filter';
-import { fetchContacts } from './redux/contacts/contacts-operations';
-import { getLoading } from './redux/contacts/contacts-selector';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import Container from './components/Container/Container';
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { Phonebook } from './pages/Phonebook';
+import { PrivateRoute } from './routes/PrivateRoute';
+import { PublicRoute } from './routes/PublicRoute';
 
+const isAuth = false;
 function App () {
-  const isLoading = useSelector(getLoading);
-  const dispatch = useDispatch();
-
   return (
-    <div className="App">
-      <h1>Phonebook</h1>
-      <ContactsForm />
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList
-        onFetchContacts={() => dispatch(fetchContacts.fulfilled())}
-      />
-      {isLoading && <h1>loading ...</h1>}
-    </div>
+    <Container>
+      <nav>
+        <ul>
+          <li>
+            <NavLink to='/'>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to='/register'>Register</NavLink>
+          </li>
+          <li>
+            <NavLink to='/login'>Login</NavLink>
+          </li>
+          <li>
+            <NavLink to='/phonebook'>Phonebook</NavLink>
+          </li>
+        </ul>
+      </nav>
+       <Routes>
+        <Route path="/"
+          element={<PublicRoute isAuth={isAuth} component={Home} />}
+        />
+        <Route path="/register"
+          element={<PublicRoute isAuth={isAuth} component={Register} />}
+        />
+        <Route path="/login"
+          element={<PublicRoute isAuth={isAuth} component={Login} />}
+        />
+        <Route path="/phonebook"
+          element={<PublicRoute isAuth={isAuth} component={Phonebook} />}
+        />
+      </Routes>
+    </Container>
   );
 };
 
