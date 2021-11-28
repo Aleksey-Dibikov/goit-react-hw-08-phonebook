@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import {
-  // connect,
   useSelector,
   useDispatch,
 } from 'react-redux';
@@ -42,7 +41,6 @@ export default function ContactsForm() {
     if (searchName(name)) {
       return alert(`${name} is already in contacts`);
     } else {
-      // onAddContact({ name, number });
       dispatch(addContact({ name, number }));
     }
     setName('');
@@ -92,11 +90,3 @@ ContactsForm.propTypes = {
   name: PropTypes.string,
   number: PropTypes.string,
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onAddContact: ({name, number}) => dispatch(addContact({name, number})),
-//   }
-// };
-
-// export default connect(null, mapDispatchToProps)(ContactsForm);

@@ -1,15 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from "redux";
 import {
-  // fetchContactsRequest,
-  // fetchContactsSuccess,
-  // fetchContactsError,
-  // addContactRequest,
-  // addContactSuccess,
-  // addContactError,
-  // deleteContactRequest,
-  // deleteContactSuccess,
-  // deleteContactError,
   changeFilter,
 } from './contacts-actions';
 import {
@@ -32,20 +23,6 @@ const items = createReducer(contacts, {
   [deleteContact.fulfilled]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
 });
-
-// const loading = createReducer(false, {
-//   [fetchContactsRequest]: () => true,
-//   [fetchContactsSuccess]: () => false,
-//   [fetchContactsError]: () => false,
-
-  // [addContactRequest]: () => true,
-  // [addContactSuccess]: () => false,
-  // [addContactError]: () => false,
-  
-  // [deleteContactRequest]: () => true,
-  // [deleteContactSuccess]: () => false,
-  // [deleteContactError]: () => false,
-// });
 
 const loading = createReducer(false, {
   [fetchContacts.pending]: () => true,

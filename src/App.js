@@ -35,36 +35,4 @@ function App () {
   );
 };
 
-
-// ====== Class ====== =======
-
-
-// class App extends Component {
-//   componentDidMount() {
-//     this.props.onFetchContacts();
-//   }
-
-//   render (){
-
-//     return (
-//       <div className="App">
-//         <h1>Phonebook</h1>
-//         <ContactsForm />
-//         <h2>Contacts</h2>
-//         <Filter />
-//         <ContactList />
-//       </div>
-//       );
-//   };
-// };
-
-// const mapStateToProps = state => ({
-//   isLoading: getLoading(state),
-// })
-
-// const mapDispatchToProps = dispatch => ({
-//   onFetchContacts: () => dispatch(fetchContacts.fulfilled()),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
 export default App;

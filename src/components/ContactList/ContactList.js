@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  // connect,
   useSelector,
   useDispatch
 } from 'react-redux';
@@ -39,13 +38,3 @@ ContactList.propTypes = {
     }),
   ),
 };
-
-// const mapStateToProps = (state) => ({
-//   contacts: getVisibleContacts(state),
-// })
-
-// const mapDispatchToProps = dispatch => ({
-//   onDeleteContact: id => dispatch(deleteContact.fulfilled(id)),
-// })
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
