@@ -14,11 +14,11 @@ const styles = {
 };
 
 export default function AppBar() {
-  const isLoggedIn  = useSelector(authSelectors.getIsLoggedIn);
+  const isAuth  = useSelector(authSelectors.getIsAuth);
   return (
     <header style={styles.header}>
       <Navigation />
-      {isLoggedIn  ? <UserMenu /> : <AuthNav />}
+      {isAuth  ? <UserMenu /> : <AuthNav />}
     </header>
   );
 }

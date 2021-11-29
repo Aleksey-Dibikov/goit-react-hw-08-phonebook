@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   // connect,
   useSelector,
@@ -13,8 +14,11 @@ import { getLoading } from '../redux/contacts/contacts-selector';
 
 
 export function Phonebook() {
-    const isLoading = useSelector(getLoading);
     const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchContacts.fulfilled());
+    }, [dispatch]);
+    const isLoading = useSelector(getLoading);
 
     return (
         <>
@@ -23,7 +27,7 @@ export function Phonebook() {
             <h2>Contacts</h2>
             <Filter />
             <ContactList
-                onFetchContacts={() => dispatch(fetchContacts.fulfilled())}
+                // onFetchContacts={() => dispatch(fetchContacts.fulfilled())}
             />
             {isLoading && <h1>loading ...</h1>}
         </>

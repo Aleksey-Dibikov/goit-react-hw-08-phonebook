@@ -1,4 +1,4 @@
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 
 export function PublicRoute({isAuth, component: Component}) {
     return (
