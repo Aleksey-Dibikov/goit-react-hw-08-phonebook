@@ -2,21 +2,13 @@ import { useSelector } from 'react-redux';
 import Navigation from './Navigation';
 import UserMenu from './UserMenu';
 import AuthNav from './AuthNav';
-import {authSelectors} from '../redux/auth/auth-selector';
-
-const styles = {
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderBottom: '1px solid #2A363B',
-  },
-};
+import { authSelectors } from '../redux/auth/auth-selector';
+import s from './Style.module.css'
 
 export default function AppBar() {
-  const isAuth  = useSelector(authSelectors.getIsAuth);
+  const isAuth = useSelector(authSelectors.getIsAuth);
   return (
-    <header style={styles.header}>
+    <header className={s.header}>
       <Navigation />
       {isAuth  ? <UserMenu /> : <AuthNav />}
     </header>

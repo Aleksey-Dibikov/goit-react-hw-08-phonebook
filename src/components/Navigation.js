@@ -2,39 +2,38 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { authSelectors } from '../redux/auth/auth-selector';
-
-const styles = {
-  link: {
-    display: 'inline-block',
-    textDecoration: 'none',
-    padding: 12,
-    fontWeight: 700,
-    color: '#2A363B',
-  },
-  activeLink: {
-    color: '#E84A5',
-  },
-};
+import s from './Style.module.css';
 
 const Navigation = () => {
   const isAuth = useSelector(authSelectors.getIsAuth)
   return (
     <nav>
-      <NavLink
+      {/* <NavLink
         to="/"
-        style={styles.link}
-        activestyle={styles.activeLink}
+        className={({isActive}) => (isActive ? s.activeLink : s.link)}
       >
         Home
       </NavLink>
 
       {isAuth && <NavLink
         to="/phonebook"
-        style={styles.link}
-        activestyle={styles.activeLink}
+        className={({isActive}) => (isActive ? s.activeLink : s.link)}
       >
         Phonebook
-      </NavLink>}
+      </NavLink>} */}
+      {isAuth ?
+        <NavLink to="/phonebook"
+          className={({ isActive }) =>
+          (isActive ? s.activeLink : s.link)}
+        >
+          Phonebook
+        </NavLink>
+        : <NavLink to="/"
+          className={({ isActive }) =>
+            (isActive ? s.activeLink : s.link)}
+        >
+          Home
+        </NavLink>}
     </nav>
   );
 };

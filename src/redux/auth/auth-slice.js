@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { register, logIn, logOut, fetchCurrentUser } from "./auth-operation";
 
 const initialState = {
-    user: { name: null, email: null },
-    token: null,
+    user: { name: '', email: '' },
+    token: '',
     isAuth: false,
     isFetchingCurrentUser: false,
 };
@@ -23,8 +23,8 @@ const authSlice = createSlice({
             state.isAuth = true;
         },
         [logOut.fulfilled](state, action) {
-            state.user = { name: null, email: null };
-            state.token = null;
+            state.user = { name: '', email: '' };
+            state.token = '';
             state.isAuth = false;
         },
         [fetchCurrentUser.pending](state) {

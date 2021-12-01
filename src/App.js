@@ -20,7 +20,6 @@ function App() {
   const dispatch = useDispatch();
   const isAuth = useSelector(authSelectors.getIsAuth);
   const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
-  // console.log('isFetchingCurrentUser : ', isFetchingCurrentUser);
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);

@@ -26,7 +26,7 @@ export default function ContactList() {
       ))}
     </ul>
   );
-}
+};
 
 ContactList.propTypes = {
   onDeleteContact: PropTypes.func,

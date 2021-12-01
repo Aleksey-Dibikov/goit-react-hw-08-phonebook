@@ -1,0 +1,48 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #2a363b;
+}
+.activeLink {
+  composes: link;
+  color: rgb(57, 91, 202);
+  text-shadow: 3px 3px 10px rgb(27, 141, 135), -3px -3px 10px yellow;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2a363b;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  padding: 12px;
+  font-size: 25px;
+  font-weight: 500;
+  margin-right: 12;
+}
+
+.logOut_button {
+  color: #fff;
+  background-color: #3f51b5;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+}
+
+.logOut_button:hover {
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+  background-color: #303f9f;
+}

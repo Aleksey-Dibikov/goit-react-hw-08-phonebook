@@ -56,7 +56,7 @@ const fetchCurrentUser = createAsyncThunk(
         const state = getState();
         const persistedToken = state.auth.token;
 
-        if (!persistedToken) {
+        if (persistedToken === null) {
             return rejectWithValue();
         };
 

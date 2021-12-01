@@ -25,7 +25,9 @@ export function Phonebook() {
             <ContactsForm />
             <h2>Contacts</h2>
             <Filter />
-            <ContactList />
+            <ContactList
+                // onFetchContacts={() => dispatch(fetchContacts.fulfilled())}
+            />
             {isLoading && <h1>loading ...</h1>}
         </>
     )
