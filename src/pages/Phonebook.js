@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import {
-  // connect,
   useSelector,
   useDispatch,
 } from 'react-redux';
@@ -26,9 +25,7 @@ export function Phonebook() {
             <ContactsForm />
             <h2>Contacts</h2>
             <Filter />
-            <ContactList
-                // onFetchContacts={() => dispatch(fetchContacts.fulfilled())}
-            />
+            <ContactList />
             {isLoading && <h1>loading ...</h1>}
         </>
     )

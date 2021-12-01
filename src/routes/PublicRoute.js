@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 export function PublicRoute({isAuth, component: Component}) {
     return (
         <>
-            {isAuth ? <Navigate to='/' /> : <Component />}
+            {isAuth ? <Navigate to='/phonebook' /> : <Component />}
         </>
     );
 };

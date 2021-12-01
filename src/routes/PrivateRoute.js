@@ -1,9 +1,9 @@
 import { Navigate } from "react-router-dom";
 
-export function PrivateRoute({isAuth, component: Component}) {
+export function PrivateRoute({ isAuth, component: Component }) {
     return (
         <>
-            {isAuth ? <Component /> : <Navigate to='/Login' />}
+            {isAuth ? <Component /> : <Navigate to='/login' />}
         </>
     );
 };
