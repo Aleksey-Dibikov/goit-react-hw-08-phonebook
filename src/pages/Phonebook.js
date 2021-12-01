@@ -29,4 +29,4 @@ export function Phonebook() {
             {isLoading && <h1>loading ...</h1>}
         </>
     )
-}
+};
