@@ -15,7 +15,7 @@ import { getLoading } from '../redux/contacts/contacts-selector';
 export function Phonebook() {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchContacts.fulfilled());
+        dispatch(fetchContacts());
     }, [dispatch]);
     const isLoading = useSelector(getLoading);
 

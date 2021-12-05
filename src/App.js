@@ -31,9 +31,7 @@ function App() {
       <Container>
         <Routes>
           <Route path="/"
-            element={<PublicRoute
-              isAuth={isAuth}
-              component={Home} />}
+            element={<Home/>}
           />
           <Route path="/phonebook"
             element={<PrivateRoute

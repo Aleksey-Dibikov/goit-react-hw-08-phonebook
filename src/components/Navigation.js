@@ -8,7 +8,7 @@ const Navigation = () => {
   const isAuth = useSelector(authSelectors.getIsAuth)
   return (
     <nav>
-      {/* <NavLink
+      <NavLink
         to="/"
         className={({isActive}) => (isActive ? s.activeLink : s.link)}
       >
@@ -20,8 +20,8 @@ const Navigation = () => {
         className={({isActive}) => (isActive ? s.activeLink : s.link)}
       >
         Phonebook
-      </NavLink>} */}
-      {isAuth ?
+      </NavLink>}
+      {/* {isAuth ?
         <NavLink to="/phonebook"
           className={({ isActive }) =>
           (isActive ? s.activeLink : s.link)}
@@ -33,7 +33,7 @@ const Navigation = () => {
             (isActive ? s.activeLink : s.link)}
         >
           Home
-        </NavLink>}
+        </NavLink>} */}
     </nav>
   );
 };

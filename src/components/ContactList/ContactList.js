@@ -18,7 +18,7 @@ export default function ContactList() {
           {name} : {number}
           <button
             className={s.TaskList_button}
-            onClick={() => dispatch(deleteContact.fulfilled(id))}
+            onClick={() => dispatch(deleteContact(id))}
           >
             Delete
           </button>
